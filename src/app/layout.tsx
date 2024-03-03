@@ -1,6 +1,8 @@
+import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter";
 import type { Metadata } from "next";
 import { Raleway } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/header";
 
 const raleway = Raleway({ subsets: ["latin"] });
 
@@ -16,7 +18,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
-      <body className={raleway.className}>{children}</body>
+      <body className={raleway.className}>
+        <AppRouterCacheProvider>
+          <Header />
+          {children}
+        </AppRouterCacheProvider>
+      </body>
     </html>
   );
 }
