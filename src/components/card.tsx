@@ -1,9 +1,9 @@
-import { IPokemon } from "@/api/pokemon-api";
 import { Typography, Box, Stack } from "@mui/material";
+import { PokeAPI } from "pokeapi-types";
 
 import Image from "next/image";
 
-export default async function Card({ pokemon }: { pokemon: any }) {
+export default async function Card({ pokemon }: { pokemon: PokeAPI.Pokemon }) {
   return (
     <Box
       padding="44px"
@@ -66,10 +66,7 @@ export default async function Card({ pokemon }: { pokemon: any }) {
           color="rgb(160, 160, 160)"
         >
           attack:{" "}
-          {
-            pokemon.stats.find((stat: any) => stat.stat.name === "attack")
-              .base_stat
-          }
+          {pokemon.stats.find((stat) => stat.stat.name === "attack")?.base_stat}
         </Typography>
       </Stack>
     </Box>

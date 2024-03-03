@@ -3,11 +3,11 @@ import { Box, Grid, Chip } from "@mui/material";
 import { IPokemon } from "@/api/pokemon-api";
 import Link from "next/link";
 
-interface IChips {
+interface IChipsProps {
   pokemons: IPokemon[];
 }
 
-export default function Chips({ pokemons }: IChips) {
+export default function Chips({ pokemons }: IChipsProps) {
   return (
     <Box maxWidth="50%">
       <Grid rowGap="10px" columnGap="6px" maxWidth="100%" container>
