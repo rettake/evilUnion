@@ -1,10 +1,11 @@
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter";
+import { ThemeProvider } from "@mui/material";
+import { theme } from "@/styles/theme";
 import type { Metadata } from "next";
-import { Raleway } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header";
 
-const raleway = Raleway({ subsets: ["latin"] });
+
 
 export const metadata: Metadata = {
   title: "Покемоны API",
@@ -18,10 +19,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
-      <body className={raleway.className}>
+      <body>
         <AppRouterCacheProvider>
-          <Header />
-          {children}
+          <ThemeProvider theme={theme}>
+            <Header />
+            {children}
+          </ThemeProvider>
         </AppRouterCacheProvider>
       </body>
     </html>
