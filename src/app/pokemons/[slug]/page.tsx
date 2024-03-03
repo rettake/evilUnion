@@ -1,6 +1,8 @@
-import { Stack } from "@mui/material";
-import Chips from "@/components/chips";
 import axios from "axios";
+
+import { Stack } from "@mui/material";
+
+import Chips from "@/components/chips";
 import Card from "@/components/card";
 
 async function getPokemonByName(name: string) {

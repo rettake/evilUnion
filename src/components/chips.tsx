@@ -22,6 +22,7 @@ export default function Chips({ pokemons }: IChipsProps) {
                   boxSizing: "content-box",
                   fontSize: "20px",
                   lineHeight: "100%",
+                  backgroundColor: "#1986EC",
                   "& .MuiChip-label": {
                     display: "block",
                     padding: "0",
