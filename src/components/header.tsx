@@ -20,7 +20,7 @@ export default function Header() {
             Покемоны API
           </Typography>
         </Box>
-        <Stack direction="row" gap="10px">
+        <Stack direction="row" alignItems="center" gap="10px">
           <UiClickIcon />
           <Typography fontSize="12px" fontWeight="600" lineHeight="100%">
             Нажмите на <br />
