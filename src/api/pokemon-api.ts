@@ -19,3 +19,19 @@ export const pokemonApi = axios.create({
     "Content-Type": "application/json",
   },
 });
+
+export async function getPokemonByName(name: string) {
+  const response = await axios(`${process.env.POKEMON_API}/pokemon/${name}`, {
+    method: "GET",
+  });
+
+  return response.data;
+}
+
+export async function getPokemons() {
+  const response = await axios(`${process.env.POKEMON_API}/pokemon?limit=10`, {
+    method: "GET",
+  });
+
+  return response.data;
+}
